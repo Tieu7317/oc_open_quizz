@@ -43,9 +43,9 @@ class ViewController: UIViewController {
         
         questionView.style = .standard;
         questionView.title = "Loading...";
-//USER STORY SCORE LABEL
-//        scoreLabel.text = "0 / 10";
-//USER STORY SCORE LABEL
+
+        scoreLabel.text = "0 / 10";
+
         
 //USER STORY INCORRECT LABEL
 //        incorrectLabel.text = "0"
