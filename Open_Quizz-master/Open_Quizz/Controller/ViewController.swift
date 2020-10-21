@@ -125,16 +125,16 @@ class ViewController: UIViewController {
 //        questionView.transform = transform;
 //    }
 //
-//    private func answerQuestion() {
-//        switch questionView.style {
-//            case .correct:
-//                game.answerCurrentQuestion(with: true);
-//            case .incorrect:
-//                game.answerCurrentQuestion(with: false);
-//            case .standard:
-//                break;
-//        }
-//        scoreLabel.text = "\(game.score) / 10"
+    private func answerQuestion() {
+        switch questionView.style {
+            case .correct:
+                game.answerCurrentQuestion(with: true);
+            case .incorrect:
+                game.answerCurrentQuestion(with: false);
+            case .standard:
+                break;
+        }
+        scoreLabel.text = "\(game.score) / 10"
 //        scoreIncorrect = game.incorrectAnswer;
 //
 //        let screenWidth = UIScreen.main.bounds.width;
@@ -158,27 +158,27 @@ class ViewController: UIViewController {
 //    }
 //USER STORY REPONDRE AU QUESTIONS
     
-    private func showQuestionView() {
-        questionView.transform = .identity;
-        questionView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01);
-        
-        questionView.style = .standard;
-        
-        switch game.state {
-            case .ongoing:
-                guard game.currentQuestion != nil else {
-                    questionView.title = "Erreur, questions introuvables!"
-                    game.state = .over
-                    return
-                }
-                questionView.title = game.currentQuestion!.title;
-            case .over:
-                questionView.title = "Game Over";
-        }
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
-            self.questionView.transform = .identity;
-        }, completion:nil)
-    }
+//    private func showQuestionView() {
+//        questionView.transform = .identity;
+//        questionView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01);
+//
+//        questionView.style = .standard;
+//
+//        switch game.state {
+//            case .ongoing:
+//                guard game.currentQuestion != nil else {
+//                    questionView.title = "Erreur, questions introuvables!"
+//                    game.state = .over
+//                    return
+//                }
+//                questionView.title = game.currentQuestion!.title;
+//            case .over:
+//                questionView.title = "Game Over";
+//        }
+//        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+//            self.questionView.transform = .identity;
+//        }, completion:nil)
+//    }
 
 //USER STORY INCORRECT LABEL
 //    private func modifLabelIncorrect(){
@@ -192,3 +192,4 @@ class ViewController: UIViewController {
 
 }
 
+}
